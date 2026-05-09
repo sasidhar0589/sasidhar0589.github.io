@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sasidhar Reddy Ponaka — Python Developer</title>
+  <meta name="description" content="Sasidhar Reddy Ponaka — Python developer building APIs, data tooling, and GenAI projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --bg-elev: #161922;
+      --text: #e6e8ee;
+      --text-dim: #9aa1b1;
+      --accent: #7cc4ff;
+      --accent-2: #b48dff;
+      --border: #232733;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    code, .mono { font-family: 'JetBrains Mono', monospace; }
+    a { color: var(--accent); text-decoration: none; transition: color .15s; }
+    a:hover { color: var(--accent-2); }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(15, 17, 21, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 1.5rem; max-width: 760px; margin: 0 auto;
+    }
+    .logo { font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: var(--text-dim); font-size: 0.9rem; }
+    .nav-links a:hover { color: var(--text); }
+    section { padding: 4rem 0; }
+    .hero { padding: 6rem 0 4rem; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+    .hero h1 .accent { color: var(--accent); }
+    .hero .tagline { font-size: 1.15rem; color: var(--text-dim); max-width: 600px; }
+    .hero .meta { margin-top: 1.5rem; color: var(--text-dim); font-size: 0.95rem; }
+    .hero .meta span { margin-right: 1.25rem; }
+    h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+    h2::before { content: ''; width: 24px; height: 2px; background: var(--accent); display: inline-block; }
+    .about p { color: var(--text-dim); margin-bottom: 1rem; }
+    .about p:last-child { margin-bottom: 0; }
+    .projects { display: grid; gap: 1.25rem; }
+    .project {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: border-color .15s, transform .15s;
+    }
+    .project:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .project-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem; }
+    .project-title { font-weight: 600; font-size: 1.05rem; }
+    .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      background: rgba(124, 196, 255, 0.1);
+      color: var(--accent);
+      border-radius: 4px;
+    }
+    .project-desc { color: var(--text-dim); font-size: 0.95rem; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
+    .skill {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .contact { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .contact a {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      padding: 0.75rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: border-color .15s, color .15s;
+    }
+    .contact a:hover { border-color: var(--accent); }
+    footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 600px) {
+      .nav-links { gap: 1rem; }
+      section { padding: 3rem 0; }
+      .hero { padding: 4rem 0 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <span class="logo">~/sasi</span>
+      <div class="nav-links">
+        <a href="#about">about</a>
+        <a href="#projects">projects</a>
+        <a href="#skills">skills</a>
+        <a href="#contact">contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Hi, I'm <span class="accent">Sasidhar Reddy</span> — a Python developer.</h1>
+      <p class="tagline">I build backend APIs, data tooling, and explore GenAI applications. Currently at Capital One, open to new opportunities.</p>
+      <div class="meta">
+        <span>Richmond, VA</span>
+        <span>Open to work</span>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>I'm a Python developer based in the Greater Richmond area, currently working at Capital One. I hold a master's degree from Bellevue University.</p>
+      <p>My day-to-day involves writing Python services, working through data problems, and shipping things that have to actually run reliably. Outside of work I'm exploring LLMs and GenAI tooling.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <a href="https://github.com/sasidhar0589/parking-ticket-api" class="project" target="_blank" rel="noopener">
+          <div class="project-header">
+            <span class="project-title">Parking Ticket API</span>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">REST API</span>
+            </div>
+          </div>
+          <p class="project-desc">A REST API for managing parking tickets — handles ticket creation, lookups, and updates.</p>
+        </a>
+
+        <a href="https://github.com/sasidhar0589/Gen-AI" class="project" target="_blank" rel="noopener">
+          <div class="project-header">
+            <span class="project-title">Gen-AI</span>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">LLM</span>
+            </div>
+          </div>
+          <p class="project-desc">Hands-on work building LLM-powered applications and exploring the GenAI ecosystem.</p>
+        </a>
+
+        <a href="https://github.com/sasidhar0589/python-demo" class="project" target="_blank" rel="noopener">
+          <div class="project-header">
+            <span class="project-title">Python Demo</span>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+            </div>
+          </div>
+          <p class="project-desc">Python coursework and reference scripts.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">Python</div>
+        <div class="skill">REST APIs</div>
+        <div class="skill">Flask / FastAPI</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Git</div>
+        <div class="skill">LLMs / GenAI</div>
+        <div class="skill">Data Structures</div>
+        <div class="skill">Algorithms</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <div class="contact">
+        <a href="mailto:sasidhar0589@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/sasidhar-reddy-ponaka-86316a1a1/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/sasidhar0589" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; <span id="year"></span> Sasidhar Reddy Ponaka
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

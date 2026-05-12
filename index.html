@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sasidhar Reddy Ponaka — Python Developer</title>
-  <meta name="description" content="Sasidhar Reddy Ponaka — Python developer building APIs, data tooling, and GenAI projects." />
+  <title>Sasidhar Reddy Ponaka — Senior Python Engineer</title>
+  <meta name="description" content="Sasidhar Reddy Ponaka — Senior Python engineer specializing in platform engineering, build systems, and LLM tooling." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
       padding: 1rem 1.5rem; max-width: 760px; margin: 0 auto;
     }
     .logo { font-weight: 600; font-family: 'JetBrains Mono', monospace; }
-    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
     .nav-links a { color: var(--text-dim); font-size: 0.9rem; }
     .nav-links a:hover { color: var(--text); }
     section { padding: 4rem 0; }
@@ -56,6 +56,26 @@
     h2::before { content: ''; width: 24px; height: 2px; background: var(--accent); display: inline-block; }
     .about p { color: var(--text-dim); margin-bottom: 1rem; }
     .about p:last-child { margin-bottom: 0; }
+    .experience { display: grid; gap: 1.25rem; }
+    .role {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+    .role-header {
+      display: flex; justify-content: space-between; align-items: baseline;
+      flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;
+    }
+    .role-title { font-weight: 600; font-size: 1.05rem; }
+    .role-company { color: var(--accent); font-weight: 500; }
+    .role-dates { color: var(--text-dim); font-size: 0.85rem; font-family: 'JetBrains Mono', monospace; white-space: nowrap; }
+    .role ul { list-style: none; padding: 0; }
+    .role li { color: var(--text-dim); font-size: 0.95rem; padding-left: 1.25rem; position: relative; margin-bottom: 0.5rem; }
+    .role li::before {
+      content: '▹'; position: absolute; left: 0; color: var(--accent);
+    }
+    .role li strong { color: var(--text); font-weight: 500; }
     .projects { display: grid; gap: 1.25rem; }
     .project {
       background: var(--bg-elev);
@@ -63,6 +83,7 @@
       border-radius: 8px;
       padding: 1.5rem;
       transition: border-color .15s, transform .15s;
+      display: block;
     }
     .project:hover { border-color: var(--accent); transform: translateY(-2px); }
     .project-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem; }
@@ -77,14 +98,23 @@
       border-radius: 4px;
     }
     .project-desc { color: var(--text-dim); font-size: 0.95rem; }
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
-    .skill {
+    .skills-groups { display: grid; gap: 1.5rem; }
+    .skill-group h3 {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-pill {
       background: var(--bg-elev);
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 0.75rem 1rem;
-      font-size: 0.9rem;
-      text-align: center;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.85rem;
       font-family: 'JetBrains Mono', monospace;
     }
     .contact { display: flex; flex-wrap: wrap; gap: 1rem; }
@@ -117,6 +147,7 @@
       <span class="logo">~/sasi</span>
       <div class="nav-links">
         <a href="#about">about</a>
+        <a href="#experience">experience</a>
         <a href="#projects">projects</a>
         <a href="#skills">skills</a>
         <a href="#contact">contact</a>
@@ -126,8 +157,8 @@
 
   <main class="container">
     <section class="hero">
-      <h1>Hi, I'm <span class="accent">Sasidhar Reddy</span> — a Python developer.</h1>
-      <p class="tagline">I build backend APIs, data tooling, and explore GenAI applications. Currently at Capital One, open to new opportunities.</p>
+      <h1>Hi, I'm <span class="accent">Sasidhar Reddy</span>.</h1>
+      <p class="tagline">Senior Python engineer specializing in platform engineering, build systems, and LLM tooling. 9+ years shipping production Python at scale.</p>
       <div class="meta">
         <span>Richmond, VA</span>
         <span>Open to work</span>
@@ -136,24 +167,127 @@
 
     <section id="about" class="about">
       <h2>About</h2>
-      <p>I'm a Python developer based in the Greater Richmond area, currently working at Capital One. I hold a master's degree from Bellevue University.</p>
-      <p>My day-to-day involves writing Python services, working through data problems, and shipping things that have to actually run reliably. Outside of work I'm exploring LLMs and GenAI tooling.</p>
+      <p>I'm a senior Python engineer with 9+ years of production experience across microservices, data engineering, ML pipelines, and platform engineering. Currently at Capital One, I own Python ecosystem standards — version lifecycle, dependency governance, shared libraries, and containerized build systems for large multi-team organizations.</p>
+      <p>My favorite work sits at the intersection of platform reliability and developer enablement: build pipelines that are fast and reproducible, shared libraries that don't break consumers, and Python standards that let AI/ML teams move quickly without sacrificing security or maintainability. Lately I've been building RAG prototypes and LLM-powered tooling for internal developer workflows.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="experience">
+
+        <div class="role">
+          <div class="role-header">
+            <div>
+              <div class="role-title">Senior Python Core Engineer / Platform Engineering</div>
+              <div class="role-company">Capital One</div>
+            </div>
+            <div class="role-dates">Nov 2024 — Present</div>
+          </div>
+          <ul>
+            <li>Led Python version upgrade program across <strong>15+ microservices</strong>, migrating Python 3.8 → 3.11 with EOL compliance policy and Poetry/pip-compile standards.</li>
+            <li>Designed and maintained shared internal Python libraries (auth, logging, config, retry) consumed by <strong>20+ services</strong>; owned API design, semantic versioning, and backwards-compatibility guarantees.</li>
+            <li>Architected an <strong>LLM-powered policy suggestion engine</strong> for RBAC/ABAC access configs, reducing manual policy authoring by ~60%.</li>
+            <li>Built RAG-based internal knowledge assistant prototype using <strong>LangChain and FAISS</strong> to surface entitlement docs to developers.</li>
+            <li>Standardized Docker base images and layered caching for Python services on Jenkins / GitHub Actions, cutting average pipeline build times by <strong>35%</strong>.</li>
+            <li>Built ETL pipelines using PySpark and Databricks; improved performance <strong>10x</strong> through query optimization. Achieved <strong>90% pytest coverage</strong> and led on-call rotation.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-header">
+            <div>
+              <div class="role-title">Senior Python Engineer / Shared Libraries &amp; CI-CD</div>
+              <div class="role-company">Kinsale Insurance</div>
+            </div>
+            <div class="role-dates">Jul 2024 — Nov 2024</div>
+          </div>
+          <ul>
+            <li>Built Flask-Smorest REST APIs with ACID compliance, serving as a data validation and connection layer across enterprise entity models.</li>
+            <li>Integrated an <strong>asyncio-based proxy service</strong> to parallelize API calls, improving throughput by <strong>40%</strong> for high-concurrency data retrieval.</li>
+            <li>Reduced CI/CD pipeline deployment time from <strong>2 hours to 30 minutes</strong> using Jenkins, Docker, and automated testing gates. Achieved 95% unit test coverage.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-header">
+            <div>
+              <div class="role-title">Senior Python Engineer / Ecosystem Standards Lead</div>
+              <div class="role-company">Capital One</div>
+            </div>
+            <div class="role-dates">Jan 2023 — Jul 2024</div>
+          </div>
+          <ul>
+            <li>Built a Django-based self-service web application with GitHub API integration for RBAC/ABAC policy builder UI.</li>
+            <li>Designed an <strong>LLM-assisted prompt workflow prototype</strong> to auto-classify API permission requests and suggest policy configurations.</li>
+            <li>Served as Release Management Lead for the Entitlements platform; coordinated release trains across <strong>5+ squads</strong> with zero-downtime deployments.</li>
+            <li>Migrated data from MongoDB to Amazon DocumentDB with Terraform-provisioned infrastructure; mentored 4 engineers on the enterprise rollout.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-header">
+            <div>
+              <div class="role-title">Python Engineer / Infrastructure &amp; Developer Enablement</div>
+              <div class="role-company">Capital One</div>
+            </div>
+            <div class="role-dates">Nov 2021 — Dec 2022</div>
+          </div>
+          <ul>
+            <li>Built Python orchestration Docker images deployed on Jenkins/ECS, enabling automated vulnerability management pipelines for <strong>180+ repositories</strong>.</li>
+            <li>Standardized Python packaging (Poetry, pip) and authored developer enablement documentation adopted across 180+ enterprise microservices.</li>
+            <li>Developed Flask microservices framework reducing data processing time by <strong>20%</strong>; achieved 95% unit test coverage with fixtures and mocks.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-header">
+            <div>
+              <div class="role-title">Full Stack Developer</div>
+              <div class="role-company">Minnesota Department of Health</div>
+            </div>
+            <div class="role-dates">May 2021 — Nov 2021</div>
+          </div>
+          <ul>
+            <li>Built a worker management REST API with Python Django and Jira API for healthcare task allocation.</li>
+            <li>Used Python Flask microservices to build identity microservices; achieved <strong>90% pytest coverage</strong>. Applied Scala for NPI/PCI tokenization before PostgreSQL load.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-header">
+            <div>
+              <div class="role-title">Full Stack Developer / Data Engineer</div>
+              <div class="role-company">Capital One</div>
+            </div>
+            <div class="role-dates">Jan 2019 — Apr 2021</div>
+          </div>
+          <ul>
+            <li>Built Spring Boot microservices with REST and <strong>Apache Kafka</strong> brokers; implemented Spring Batch with Spring Security.</li>
+            <li>Developed AWS Lambda functions in Python for daily reports; used S3 events to trigger EMR Spark jobs loading to PostgreSQL and Snowflake.</li>
+            <li>Created automated Jenkins/Terraform pipelines for EC2 Auto Scaling and Lambda packaging; migrated ExtJS front-end to Angular 8.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-header">
+            <div>
+              <div class="role-title">Java Developer</div>
+              <div class="role-company">Mastercard</div>
+            </div>
+            <div class="role-dates">Feb 2018 — Jan 2019</div>
+          </div>
+          <ul>
+            <li>Migrated Spring applications to Spring Boot microservices; led Oracle 12C DB migration across <strong>380+ repositories</strong>.</li>
+            <li>Designed OAuth2-based authentication and managed payment card industry (PCI) compliance for fraud detection platform.</li>
+          </ul>
+        </div>
+
+      </div>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+      <h2>Side Projects</h2>
       <div class="projects">
-        <a href="https://github.com/sasidhar0589/parking-ticket-api" class="project" target="_blank" rel="noopener">
-          <div class="project-header">
-            <span class="project-title">Parking Ticket API</span>
-            <div class="project-tags">
-              <span class="tag">Python</span>
-              <span class="tag">REST API</span>
-            </div>
-          </div>
-          <p class="project-desc">A REST API for managing parking tickets — handles ticket creation, lookups, and updates.</p>
-        </a>
-
         <a href="https://github.com/sasidhar0589/Gen-AI" class="project" target="_blank" rel="noopener">
           <div class="project-header">
             <span class="project-title">Gen-AI</span>
@@ -163,6 +297,17 @@
             </div>
           </div>
           <p class="project-desc">Hands-on work building LLM-powered applications and exploring the GenAI ecosystem.</p>
+        </a>
+
+        <a href="https://github.com/sasidhar0589/parking-ticket-api" class="project" target="_blank" rel="noopener">
+          <div class="project-header">
+            <span class="project-title">Parking Ticket API</span>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">REST API</span>
+            </div>
+          </div>
+          <p class="project-desc">A REST API for managing parking tickets — handles ticket creation, lookups, and updates.</p>
         </a>
 
         <a href="https://github.com/sasidhar0589/python-demo" class="project" target="_blank" rel="noopener">
@@ -179,15 +324,68 @@
 
     <section id="skills">
       <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill">Python</div>
-        <div class="skill">REST APIs</div>
-        <div class="skill">Flask / FastAPI</div>
-        <div class="skill">SQL</div>
-        <div class="skill">Git</div>
-        <div class="skill">LLMs / GenAI</div>
-        <div class="skill">Data Structures</div>
-        <div class="skill">Algorithms</div>
+      <div class="skills-groups">
+        <div class="skill-group">
+          <h3>Python</h3>
+          <div class="skill-list">
+            <span class="skill-pill">FastAPI</span>
+            <span class="skill-pill">Flask</span>
+            <span class="skill-pill">Django</span>
+            <span class="skill-pill">PySpark</span>
+            <span class="skill-pill">asyncio</span>
+            <span class="skill-pill">pandas</span>
+            <span class="skill-pill">NumPy</span>
+            <span class="skill-pill">pytest</span>
+            <span class="skill-pill">Poetry / pip</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>GenAI &amp; LLMs</h3>
+          <div class="skill-list">
+            <span class="skill-pill">LangChain</span>
+            <span class="skill-pill">LlamaIndex</span>
+            <span class="skill-pill">RAG</span>
+            <span class="skill-pill">FAISS</span>
+            <span class="skill-pill">Pinecone</span>
+            <span class="skill-pill">ChromaDB</span>
+            <span class="skill-pill">OpenAI / Claude / Llama</span>
+            <span class="skill-pill">Prompt Engineering</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Cloud &amp; Data</h3>
+          <div class="skill-list">
+            <span class="skill-pill">AWS (EC2, S3, Lambda, ECS, EMR)</span>
+            <span class="skill-pill">SageMaker</span>
+            <span class="skill-pill">Databricks</span>
+            <span class="skill-pill">Apache Kafka</span>
+            <span class="skill-pill">Spark</span>
+            <span class="skill-pill">PostgreSQL</span>
+            <span class="skill-pill">MongoDB</span>
+            <span class="skill-pill">DynamoDB</span>
+            <span class="skill-pill">Snowflake</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>DevOps &amp; Build Systems</h3>
+          <div class="skill-list">
+            <span class="skill-pill">Jenkins</span>
+            <span class="skill-pill">Docker</span>
+            <span class="skill-pill">Terraform</span>
+            <span class="skill-pill">GitHub Actions</span>
+            <span class="skill-pill">CI/CD</span>
+            <span class="skill-pill">UNIX Shell</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Auth &amp; Security</h3>
+          <div class="skill-list">
+            <span class="skill-pill">OAuth2</span>
+            <span class="skill-pill">JWT</span>
+            <span class="skill-pill">RBAC / ABAC</span>
+            <span class="skill-pill">Amazon IAM</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -195,7 +393,7 @@
       <h2>Get in touch</h2>
       <div class="contact">
         <a href="mailto:sasidhar0589@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/sasidhar-reddy-ponaka-86316a1a1/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/sasidhar-sp-86316a1a1" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/sasidhar0589" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
